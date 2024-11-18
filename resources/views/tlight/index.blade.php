@@ -27,12 +27,12 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Jenis</th>
+                <th>Status Jalan</th>
+                <th>Nama Jalan</th>
                 <th>Jenis APILL</th>
                 <th>Titik APILL</th>
                 <th>Kondisi APILL</th>
                 <th>Tahun</th>
-                <th>Lokasi</th>
                 <th>Dokumentasi</th>
                 <th>Actions</th>
             </tr>
@@ -42,11 +42,11 @@
                 <tr>
                     <td>{{ $tlight->tlight_id }}</td>
                     <td>Jalan {{ $tlight->jenis }}</td>
+                    <td>{{ $tlight->lokasi }}</td>
                     <td>{{ $tlight->jenisapill }}</td>
                     <td>{{ $tlight->titikapill }}</td>
                     <td>{{ $tlight->kondisiapill }}</td>
                     <td>{{ $tlight->tahun }}</td>
-                    <td>{{ $tlight->lokasi }}</td>
                     <td>
                         @if($tlight->dokumentasi)
                             <img src="{{ asset('storage/' . $tlight->dokumentasi) }}" alt="Traffic Light Documentation" style="max-width: 100px; max-height: 100px;">

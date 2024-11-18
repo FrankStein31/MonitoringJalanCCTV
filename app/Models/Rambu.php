@@ -17,4 +17,12 @@ class Rambu extends Model
         'jenis', 'namarambu', 'jenisrambu', 'titikrambu', 'kondisirambu',
         'tahun', 'keterangan', 'lokasi', 'dokumentasi'
     ];
+    // protected $fillable = [
+    //     'jenis', 'namarambu', 'jenisrambu', 'titikrambu', 
+    //     'kondisirambu', 'tahun', 'keterangan', 'lokasi'
+    // ];
+    public function dokumentasi()
+    {
+        return $this->hasMany(RambuDokumentasi::class);
+    }
 }

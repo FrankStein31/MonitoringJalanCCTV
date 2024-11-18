@@ -30,10 +30,10 @@ class TrafficController extends Controller
         $request->validate([
             'jenis_traffic' => 'required',
             'namajalan' => 'required',
-            'statusjalan' => 'required',
+            'statusjalan' => 'nullable',
             'kapasitasjalan' => 'required|integer',
             'volumelalulintas' => 'required|integer',
-            'kondisijalan' => 'required',
+            'kondisijalan' => 'nullable',
             'lebarjalan' => 'required|integer',
             'dokumentasi' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
@@ -61,10 +61,10 @@ class TrafficController extends Controller
         $request->validate([
             'jenis_traffic' => 'required',
             'namajalan' => 'required',
-            'statusjalan' => 'required',
+            'statusjalan' => 'nullable',
             'kapasitasjalan' => 'required|integer',
             'volumelalulintas' => 'required|integer',
-            'kondisijalan' => 'required',
+            'kondisijalan' => 'nullable',
             'lebarjalan' => 'required|integer',
             'dokumentasi' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);

@@ -6,12 +6,16 @@
     <form action="{{ route('tlight.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="jenis">Jenis</label>
+            <label for="jenis">Status Jalan</label>
             <select name="jenis" id="jenis" class="form-control" required>
                 <option value="nasional">Nasional</option>
                 <option value="provinsi">Provinsi</option>
                 <option value="kota">Kota</option>
             </select>
+        </div>
+        <div class="form-group">
+            <label for="lokasi">Nama Jalan</label>
+            <input type="text" name="lokasi" id="lokasi" class="form-control">
         </div>
         <div class="form-group">
             <label for="jenisapill">Jenis APILL</label>
@@ -36,10 +40,6 @@
         <div class="form-group">
             <label for="keterangan">Keterangan</label>
             <textarea name="keterangan" id="keterangan" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="lokasi">Lokasi</label>
-            <input type="text" name="lokasi" id="lokasi" class="form-control">
         </div>
         <div class="form-group">
             <label for="dokumentasi">Dokumentasi</label>

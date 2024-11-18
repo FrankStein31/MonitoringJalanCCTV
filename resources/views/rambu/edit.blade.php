@@ -6,21 +6,39 @@
     <form action="{{ route('rambu.update', $rambu) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <div class="form-group">
-            <label for="jenis">Jenis</label>
+        <!-- <div class="form-group">
+            <label for="jenis">Jalan</label>
             <select name="jenis" id="jenis" class="form-control" required>
                 <option value="nasional" {{ $rambu->jenis == 'nasional' ? 'selected' : '' }}>Nasional</option>
                 <option value="provinsi" {{ $rambu->jenis == 'provinsi' ? 'selected' : '' }}>Provinsi</option>
                 <option value="kota" {{ $rambu->jenis == 'kota' ? 'selected' : '' }}>Kota</option>
             </select>
-        </div>
+        </div> -->
+
         <div class="form-group">
+            <label for="jenis">Jalan</label>
+            <select name="jenis" id="jenis" class="form-control">
+                <option value="">-- Pilih Jalan --</option>
+                @foreach ($trafficData as $traffic)
+                    <option value="{{ $traffic->namajalan }}" 
+                        {{ $rambu->jenis == $traffic->namajalan ? 'selected' : '' }}>
+                        {{ $traffic->namajalan }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <!-- <div class="form-group">
             <label for="namarambu">Nama Rambu</label>
             <input type="text" name="namarambu" id="namarambu" class="form-control" value="{{ $rambu->namarambu }}" required>
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label for="jenisrambu">Jenis Rambu</label>
             <input type="text" name="jenisrambu" id="jenisrambu" class="form-control" value="{{ $rambu->jenisrambu }}" required>
+        </div> -->
+        <div class="form-group">
+            <label for="jenisrambu">Jenis Rambu</label>
+            <textarea name="jenisrambu" id="jenisrambu" class="form-control" rows="5" placeholder="Pisahkan poin dengan baris baru" required>{{ $rambu->jenisrambu }}</textarea>
         </div>
         <div class="form-group">
             <label for="titikrambu">Titik Rambu (mp/jam)</label>
@@ -34,14 +52,14 @@
             <label for="tahun">Tahun</label>
             <input type="number" name="tahun" id="tahun" class="form-control" value="{{ $rambu->tahun }}" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="keterangan">Keterangan</label>
             <textarea name="keterangan" id="keterangan" class="form-control">{{ $rambu->keterangan }}</textarea>
-        </div>
-        <div class="form-group">
+        </div> -->
+        <!-- <div class="form-group">
             <label for="lokasi">Lokasi</label>
             <input type="text" name="lokasi" id="lokasi" class="form-control" value="{{ $rambu->lokasi }}">
-        </div>
+        </div> -->
         <div class="form-group">
             <label for="dokumentasi">Dokumentasi</label>
             <input type="file" name="dokumentasi" id="dokumentasi" class="form-control-file">
@@ -49,6 +67,7 @@
                 <img src="{{ asset('storage/' . $rambu->dokumentasi) }}" alt="Current Image" style="max-width: 200px; margin-top: 10px;">
             @endif
         </div>
+
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 @endsection

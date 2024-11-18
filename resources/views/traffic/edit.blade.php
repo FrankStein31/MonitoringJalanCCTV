@@ -7,7 +7,7 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-            <label for="jenis_traffic">Jenis Traffic</label>
+            <label for="jenis_traffic">Status Jalan</label>
             <select name="jenis_traffic" id="jenis_traffic" class="form-control" required>
                 <option value="nasional" {{ $traffic->jenis_traffic == 'nasional' ? 'selected' : '' }}>Nasional</option>
                 <option value="provinsi" {{ $traffic->jenis_traffic == 'provinsi' ? 'selected' : '' }}>Provinsi</option>
@@ -18,10 +18,10 @@
             <label for="namajalan">Nama Jalan</label>
             <input type="text" name="namajalan" id="namajalan" class="form-control" value="{{ $traffic->namajalan }}" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="statusjalan">Status Jalan</label>
             <input type="text" name="statusjalan" id="statusjalan" class="form-control" value="{{ $traffic->statusjalan }}" required>
-        </div>
+        </div> -->
         <div class="form-group">
             <label for="kapasitasjalan">Kapasitas Jalan (mp/jam)</label>
             <input type="number" name="kapasitasjalan" id="kapasitasjalan" class="form-control" value="{{ $traffic->kapasitasjalan }}" required>
@@ -46,10 +46,10 @@
             <label for="keterangan">Keterangan</label>
             <textarea name="keterangan" id="keterangan" class="form-control">{{ $traffic->keterangan }}</textarea>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="lokasi">Lokasi</label>
             <input type="text" name="lokasi" id="lokasi" class="form-control" value="{{ $traffic->lokasi }}">
-        </div>
+        </div> -->
         <div class="form-group">
             <label for="dokumentasi">Dokumentasi</label>
             <input type="file" name="dokumentasi" id="dokumentasi" class="form-control-file">

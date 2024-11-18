@@ -60,7 +60,7 @@
             <li class="nav-item {{ Nav::isRoute('traffic') }}">
                 <a class="nav-link" href="{{ route('traffic.index') }}">
                     <i class="fas fa-fw fa-list"></i>
-                    <span>{{ __('Traffic') }}</span>
+                    <span>{{ __('Jalan') }}</span>
                 </a>
             </li>
             <li class="nav-item {{ Nav::isRoute('rambu') }}">

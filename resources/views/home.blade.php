@@ -37,7 +37,7 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h5 class="card-title">Traffic</h5>
+                            <h5 class="card-title">Jalan</h5>
                             <h2 class="mb-0">{{ $trafficCount }}</h2>
                         </div>
                         <div>

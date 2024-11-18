@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('main-content')
-    <h1>Traffic Data</h1>
+    <h1>Data Jalan</h1>
     <a href="{{ route('traffic.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
 
     <form action="{{ route('traffic.index') }}" method="GET" class="mb-3">
@@ -28,12 +28,12 @@
             <tr>
                 <th>ID</th>
                 <th>Nama Jalan</th>
-                <th>Jenis</th>
+                <th>Status Jalan</th>
                 <th>Kondisi Jalan</th>
                 <th>Kapasitas Jalan (mp/jam)</th>
                 <th>Volume Lalu Lintas (mp/jam)</th>
                 <th>Lebar Jalan (meter)</th>
-                <th>Lokasi</th>
+                <!-- <th>Lokasi</th> -->
                 <th>Dokumentasi</th>
                 <th>Actions</th>
             </tr>
@@ -48,7 +48,7 @@
                     <td>{{ $traffic->kapasitasjalan }}</td>
                     <td>{{ $traffic->volumelalulintas }}</td>
                     <td>{{ $traffic->lebarjalan }}</td>
-                    <td>{{ $traffic->lokasi }}</td>
+                    <!-- <td>{{ $traffic->lokasi }}</td> -->
                     <td>
                         @if($traffic->dokumentasi)
                             <img src="{{ asset('storage/' . $traffic->dokumentasi) }}" alt="Traffic Documentation" style="max-width: 100px; max-height: 100px;">
